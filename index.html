@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>ماي روم | غرف نوم · خزائن · مراتب بالرياض</title>
+  <meta name="description" content="ماي روم – غرف نوم وخزائن ومراتب في الرياض. 4 فروع، توصيل وتركيب، والدفع عند الاستلام. تواصل واتساب.">
+  <meta name="theme-color" content="#0f766e">
+  <style>
+    :root {
+      --brand: #0f766e;
+      --brand-dark: #0a5c56;
+      --brand-light: #14b8a6;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --line: #e2e8f0;
+      --gold: #d97706;
+      --ok: #16a34a;
+      --shadow: 0 10px 40px rgba(15, 23, 42, 0.08);
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding-bottom: 92px;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(960px, 92%); margin: 0 auto; }
+
+    /* Top bar */
+    .topbar {
+      background: var(--brand-dark);
+      color: #fff;
+      font-size: 0.9rem;
+      text-align: center;
+      padding: 10px 12px;
+    }
+    .topbar strong { color: #fde68a; }
+
+    /* Header */
+    header {
+      background: var(--card);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 0;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: var(--brand-dark);
+    }
+    .logo-mark {
+      width: 42px; height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-light));
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 0.85rem;
+    }
+    .header-cta {
+      background: var(--ok);
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(165deg, #0f766e 0%, #115e59 45%, #134e4a 100%);
+      color: #fff;
+      padding: 36px 0 42px;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.22);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      margin-bottom: 14px;
+    }
+    .hero h1 {
+      font-size: clamp(1.55rem, 4.5vw, 2.2rem);
+      line-height: 1.35;
+      margin-bottom: 10px;
+    }
+    .hero p.lead {
+      opacity: 0.95;
+      font-size: 1.05rem;
+      margin-bottom: 18px;
+      max-width: 36em;
+    }
+    .price-box {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      margin: 18px 0 22px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px 24px;
+    }
+    .price-box .from {
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+    .price-box .amount {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #fde68a;
+      line-height: 1;
+    }
+    .price-box .amount small {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .hero-points {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 22px;
+    }
+    .hero-points span {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.98rem;
+    }
+    .hero-points i {
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      background: var(--ok);
+      display: grid;
+      place-items: center;
+      font-style: normal;
+      font-size: 0.75rem;
+      flex-shrink: 0;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 22px;
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+    .btn-wa {
+      background: #25d366;
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+    }
+    .btn-wa:hover { filter: brightness(1.05); }
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      border: 2px solid rgba(255,255,255,0.55);
+    }
+
+    /* Sections */
+    section { padding: 36px 0; }
+    .section-title {
+      font-size: 1.35rem;
+      margin-bottom: 8px;
+      color: var(--brand-dark);
+    }
+    .section-sub {
+      color: var(--muted);
+      margin-bottom: 22px;
+      font-size: 0.98rem;
+    }
+
+    /* Offers grid */
+    .offers {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 16px;
+    }
+    .offer-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .offer-card h3 {
+      font-size: 1.08rem;
+      color: var(--text);
+    }
+    .offer-card .tag {
+      display: inline-block;
+      background: #ecfdf5;
+      color: var(--brand-dark);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      width: fit-content;
+    }
+    .offer-card .price {
+      font-size: 1.55rem;
+      font-weight: 900;
+      color: var(--brand);
+    }
+    .offer-card .price small {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+    .offer-card ul {
+      list-style: none;
+      color: var(--muted);
+      font-size: 0.92rem;
+      flex: 1;
+    }
+    .offer-card ul li { padding: 3px 0; }
+    .offer-card ul li::before {
+      content: "✓ ";
+      color: var(--ok);
+      font-weight: 700;
+    }
+    .offer-card .btn-wa {
+      width: 100%;
+      padding: 12px;
+      font-size: 0.95rem;
+      margin-top: 6px;
+    }
+
+    /* Branches */
+    .branches {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 14px;
+    }
+    .branch {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+    .branch .num {
+      width: 36px; height: 36px;
+      border-radius: 10px;
+      background: #ecfdf5;
+      color: var(--brand-dark);
+      font-weight: 900;
+      display: grid;
+      place-items: center;
+      margin-bottom: 10px;
+    }
+    .branch h3 { font-size: 1.05rem; margin-bottom: 6px; }
+    .branch p { color: var(--muted); font-size: 0.9rem; }
+
+    /* Why us */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 14px;
+    }
+    .why-item {
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      padding: 18px;
+      text-align: center;
+    }
+    .why-item .icon {
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+    }
+    .why-item h3 { font-size: 1rem; margin-bottom: 6px; }
+    .why-item p { color: var(--muted); font-size: 0.88rem; }
+
+    /* Reviews */
+    .reviews {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 14px;
+    }
+    .review {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+    .stars { color: #f59e0b; letter-spacing: 2px; margin-bottom: 8px; }
+    .review p { font-size: 0.95rem; margin-bottom: 12px; color: #334155; }
+    .review .who { font-weight: 700; font-size: 0.9rem; color: var(--brand-dark); }
+
+    /* Note */
+    .note {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      color: #92400e;
+      border-radius: 12px;
+      padding: 14px 16px;
+      font-size: 0.9rem;
+      margin-top: 10px;
+    }
+
+    /* Footer */
+    footer {
+      background: #0f172a;
+      color: #cbd5e1;
+      padding: 28px 0 110px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    footer strong { color: #fff; }
+    footer a { color: var(--brand-light); }
+
+    /* Sticky WhatsApp */
+    .sticky-bar {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 100;
+      background: #fff;
+      border-top: 1px solid var(--line);
+      padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+      box-shadow: 0 -8px 30px rgba(0,0,0,0.08);
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+    .sticky-bar .btn {
+      flex: 1;
+      max-width: 420px;
+      padding: 14px 16px;
+    }
+    .sticky-bar .btn-call {
+      background: var(--brand);
+      color: #fff;
+      max-width: 120px;
+      flex: 0 0 auto;
+    }
+
+    @media (max-width: 560px) {
+      .hero { padding: 28px 0 34px; }
+      .price-box .amount { font-size: 1.7rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- عدّل رقم الواتساب هنا في كل الروابط: 9665XXXXXXXX -->
+  <div class="topbar">
+    <strong>ماي روم</strong> — غرف نوم · خزائن · مراتب — 4 فروع — توصيل وتركيب
+  </div>
+
+  <header>
+    <div class="container header-inner">
+      <div class="logo">
+        <div class="logo-mark">MR</div>
+        <span>ماي روم</span>
+      </div>
+      <a class="header-cta" href="https://wa.me/966558660352?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%85%D8%A7%D9%8A%20%D8%B1%D9%88%D9%85" target="_blank" rel="noopener">واتساب</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">عروض الرياض اليوم</div>
+      <h1>غرف نوم · خزائن · مراتب<br>بأسعار منافسة مع التوصيل والتركيب</h1>
+      <p class="lead">
+        ماي روم — غرف نوم وخزائن ومراتب بجودة واضحة وأسعار منافسة، مع 4 فروع لخدمتك في الرياض.
+      </p>
+
+      <div class="price-box">
+        <div>
+          <div class="from">تبدأ الأسعار من</div>
+          <div class="amount">999 <small>ر.س</small></div>
+        </div>
+        <div style="opacity:0.95;font-size:0.95rem;max-width:16em">
+          شامل خيارات التوصيل والتركيب داخل الرياض حسب العرض المتفق عليه
+        </div>
+      </div>
+
+      <div class="hero-points">
+        <span><i>✓</i> غرف نوم كاملة · خزائن ودواليب · مراتب طبية وفندقية</span>
+        <span><i>✓</i> معاينة الخيارات عبر واتساب قبل الطلب</span>
+        <span><i>✓</i> دفع عند الاستلام في الرياض</span>
+        <span><i>✓</i> 4 فروع لتسهيل الاستلام والمعاينة</span>
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn btn-wa" href="https://wa.me/966558660352?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20%D8%A3%D8%A8%D8%BA%D9%89%20%D8%A3%D8%B3%D8%B9%D8%A7%D8%B1%20%D9%85%D8%A7%D9%8A%20%D8%B1%D9%88%D9%85" target="_blank" rel="noopener">
+          تواصل واتساب الآن
+        </a>
+        <a class="btn btn-outline" href="#offers">شاهد العروض</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="offers">
+    <div class="container">
+      <h2 class="section-title">عروض مختارة</h2>
+      <p class="section-sub">أسعار استرشادية — أكد المقاس والنوع عبر واتساب قبل الطلب</p>
+      <div class="offers">
+        <article class="offer-card">
+          <span class="tag">غرف نوم</span>
+          <h3>غرفة نوم نفرين</h3>
+          <div class="price">من 1,500 <small>ر.س</small></div>
+          <ul>
+            <li>تشكيلات جاهزة وتفصيل حسب المتاح</li>
+            <li>خيارات ألوان ومقاسات</li>
+            <li>توصيل وتركيب داخل الرياض</li>
+          </ul>
+          <a class="btn btn-wa" href="https://wa.me/966558660352?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%BA%D8%B1%D9%81%D8%A9%20%D9%86%D9%88%D9%85%20%D9%86%D9%81%D8%B1%D9%8A%D9%86%20-%20%D9%85%D8%A7%D9%8A%20%D8%B1%D9%88%D9%85" target="_blank" rel="noopener">اطلب عبر واتساب</a>
+        </article>
+
+        <article class="offer-card">
+          <span class="tag">خزائن</span>
+          <h3>خزائن ودواليب</h3>
+          <div class="price">من 750 <small>ر.س</small></div>
+          <ul>
+            <li>دواليب غرف نوم وخزائن عملية</li>
+            <li>مقاسات تناسب الشقق والمنازل</li>
+            <li>صور الموديلات عبر واتساب</li>
+          </ul>
+          <a class="btn btn-wa" href="https://wa.me/966558660352?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%AE%D8%B2%D8%A7%D8%A6%D9%86%20%D9%88%D8%AF%D9%88%D9%84%D8%A7%D8%A8%20-%20%D9%85%D8%A7%D9%8A%20%D8%B1%D9%88%D9%85" target="_blank" rel="noopener">اطلب عبر واتساب</a>
+        </article>
+
+        <article class="offer-card">
+          <span class="tag">مراتب</span>
+          <h3>مراتب طبية وفندقية</h3>
+          <div class="price">من 999 <small>ر.س</small></div>
+          <ul>
+            <li>مفرد · نفر ونص · نفرين</li>
+            <li>كثافات متعددة حسب الاحتياج</li>
+            <li>استشارة سريعة للمقاس المناسب</li>
+          </ul>
+          <a class="btn btn-wa" href="https://wa.me/966558660352?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%85%D8%B1%D8%AA%D8%A8%D8%A9%20-%20%D9%85%D8%A7%D9%8A%20%D8%B1%D9%88%D9%85" target="_blank" rel="noopener">اطلب عبر واتساب</a>
+        </article>
+
+        <article class="offer-card">
+          <span class="tag">أطفال</span>
+          <h3>غرفة نوم أطفال</h3>
+          <div class="price">من 1,300 <small>ر.س</small></div>
+          <ul>
+            <li>تصاميم عملية ومناسبة للأطفال</li>
+            <li>مقاسات تناسب غرف الشقق</li>
+            <li>تنسيق التوصيل والتركيب</li>
+          </ul>
+          <a class="btn btn-wa" href="https://wa.me/966558660352?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%BA%D8%B1%D9%81%D8%A9%20%D9%86%D9%88%D9%85%20%D8%A3%D8%B7%D9%81%D8%A7%D9%84%20-%20%D9%85%D8%A7%D9%8A%20%D8%B1%D9%88%D9%85" target="_blank" rel="noopener">اطلب عبر واتساب</a>
+        </article>
+      </div>
+      <p class="note">
+        يُفضّل تأكيد المقاس واللون والمواصفات قبل إتمام الطلب. الخدمة والتوصيل داخل الرياض ونواحيها حسب سياسة الفرع.
+      </p>
+    </div>
+  </section>
+
+  <section style="background:#fff;border-block:1px solid var(--line)">
+    <div class="container">
+      <h2 class="section-title">فروعنا الأربعة</h2>
+      <p class="section-sub">زور أقرب فرع أو اطلب عبر واتساب وسنوجّهك للأنسب</p>
+      <div class="branches">
+        <div class="branch">
+          <div class="num">1</div>
+          <h3>الفرع الأول</h3>
+          <p>الرياض – [اسم الحي / الشارع]<br>ساعات العمل: 10 ص – 10 م</p>
+        </div>
+        <div class="branch">
+          <div class="num">2</div>
+          <h3>الفرع الثاني</h3>
+          <p>الرياض – [اسم الحي / الشارع]<br>ساعات العمل: 10 ص – 10 م</p>
+        </div>
+        <div class="branch">
+          <div class="num">3</div>
+          <h3>الفرع الثالث</h3>
+          <p>الرياض – [اسم الحي / الشارع]<br>ساعات العمل: 10 ص – 10 م</p>
+        </div>
+        <div class="branch">
+          <div class="num">4</div>
+          <h3>الفرع الرابع</h3>
+          <p>الرياض – [اسم الحي / الشارع]<br>ساعات العمل: 10 ص – 10 م</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">لماذا ماي روم؟</h2>
+      <p class="section-sub">نفس فكرة صفحات الإعلان الناجحة — واضحة وسريعة وتحوّل لواتساب</p>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="icon">🛏️</div>
+          <h3>خيارات متنوعة</h3>
+          <p>غرف نوم وخزائن ومراتب بمقاسات تناسب البيت والشقة</p>
+        </div>
+        <div class="why-item">
+          <div class="icon">🚚</div>
+          <h3>توصيل وتركيب</h3>
+          <p>نسقّل معك الموعد داخل الرياض حسب العرض</p>
+        </div>
+        <div class="why-item">
+          <div class="icon">💰</div>
+          <h3>دفع عند الاستلام</h3>
+          <p>راحة بال قبل ما تلتزم بالطلب النهائي</p>
+        </div>
+        <div class="why-item">
+          <div class="icon">📍</div>
+          <h3>4 فروع</h3>
+          <p>قرب منك للمعاينة أو الاستلام من الفرع</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#fff;border-block:1px solid var(--line)">
+    <div class="container">
+      <h2 class="section-title">آراء عملائنا</h2>
+      <p class="section-sub">مرثلة لصياغة تقييمات — استبدلها بتقييمات حقيقية من عملائك</p>
+      <div class="reviews">
+        <div class="review">
+          <div class="stars">★★★★★</div>
+          <p>المرتبة مريحة والتوصيل كان في الموعد. التعامل واضح من أول رسالة واتساب.</p>
+          <div class="who">عبدالله – الرياض</div>
+        </div>
+        <div class="review">
+          <div class="stars">★★★★★</div>
+          <p>اخترت غرفة نفرين والسعر ناسبني. ركّبوا الشغل مرتب وتعاونوا بالمقاس.</p>
+          <div class="who">نورة – شرق الرياض</div>
+        </div>
+        <div class="review">
+          <div class="stars">★★★★★</div>
+          <p>زرت أحد الفروع وشفت الخيارات بنفسي. أنصح في غرف النوم والمراتب عندهم.</p>
+          <div class="who">فهد – شمال الرياض</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p><strong>ماي روم</strong></p>
+      <p style="margin-top:8px">غرف نوم · خزائن · مراتب — الرياض — 4 فروع</p>
+      <p style="margin-top:8px">
+        <a href="https://wa.me/966558660352" target="_blank" rel="noopener">تواصل واتساب</a>
+      </p>
+      <p style="margin-top:14px;font-size:0.8rem;opacity:0.75">
+        صفحة مخصّصة لإعلانات Google — يُفضّل تأكيد التفاصيل قبل الشراء
+      </p>
+    </div>
+  </footer>
+
+  <div class="sticky-bar">
+    <a class="btn btn-call" href="tel:0558660352">اتصال</a>
+    <a class="btn btn-wa" href="https://wa.me/966558660352?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20%D9%85%D9%86%20%D8%A5%D8%B9%D9%84%D8%A7%D9%86%20%D8%AC%D9%88%D8%AC%D9%84%20-%20%D9%85%D8%A7%D9%8A%20%D8%B1%D9%88%D9%85" target="_blank" rel="noopener">
+      واتساب — اطلب الآن
+    </a>
+  </div>
+</body>
+</html>
