@@ -21,7 +21,15 @@
     .wrap{width:min(1100px,94%);margin:0 auto}
     .topbar{background:var(--brand2);color:#fff;text-align:center;padding:9px 12px;font-size:.9rem}
     .topbar strong{color:#fde68a}
-    header{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40}
+
+    .promo-bar{position:sticky;top:0;z-index:50;background:linear-gradient(90deg,#0f766e,#0d9488,#115e59);color:#fff;font-size:.88rem;font-weight:600;overflow:hidden;height:38px;display:flex;align-items:center;border-bottom:1px solid rgba(255,255,255,.12)}
+    .promo-bar .track{display:flex;white-space:nowrap;animation:promo-marquee 28s linear infinite;will-change:transform}
+    .promo-bar .track:hover{animation-play-state:paused}
+    .promo-bar .item{padding:0 2.5rem;display:inline-flex;align-items:center;gap:8px}
+    .promo-bar .item::after{content:"•";opacity:.5;margin-right:-1.2rem;margin-left:1.2rem}
+    .promo-bar a{color:#fef3c7;text-decoration:underline;text-underline-offset:2px}
+    @keyframes promo-marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+    header{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:38px;z-index:40}
     .head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0}
     .logo{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--brand2)}
     .logo img{width:48px;height:48px;object-fit:contain;border-radius:10px;background:#fff;border:1px solid var(--line)}
@@ -33,7 +41,7 @@
     .btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.55)}
     .hero{position:relative;color:#fff;min-height:420px;display:flex;align-items:flex-end}
     .hero-bg{position:absolute;inset:0;background:url(images/banner.jpg) center/cover no-repeat}
-    .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,23,42,.25),rgba(15,118,110,.88) 70%,rgba(10,92,86,.95))}
+    .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,23,42,.15) 0%,rgba(15,118,110,.55) 55%,rgba(10,92,86,.82) 100%)}
     .hero-inner{position:relative;z-index:1;padding:40px 0 36px;width:100%}
     .badge{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:5px 12px;border-radius:999px;font-size:.85rem;margin-bottom:12px}
     .hero h1{font-size:clamp(1.5rem,4.5vw,2.3rem);line-height:1.3;margin-bottom:10px}
@@ -126,6 +134,20 @@
   </style>
 </head>
 <body>
+
+  <div class="promo-bar" id="promoBar" role="region" aria-label="عروض ماي روم">
+    <div class="track" id="promoTrack">
+      <span class="item" id="promoText1">عرض خاص للعملاء الجدد — خصم على غرف النوم والخزائن عند الطلب عبر واتساب</span>
+      <span class="item">توصيل وتركيب داخل الرياض · دفع عند الاستلام</span>
+      <span class="item">أسعار تبدأ من 1500 ر.س — أكّد المقاس والموديل قبل الطلب</span>
+      <span class="item"><a href="https://wa.me/966558660352?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20%D8%B7%D9%84%D8%A8%20%D8%B9%D8%B1%D8%B6" target="_blank" rel="noopener">اطلب عرض سعر الآن</a></span>
+      <span class="item" id="promoText1b">عرض خاص للعملاء الجدد — خصم على غرف النوم والخزائن عند الطلب عبر واتساب</span>
+      <span class="item">توصيل وتركيب داخل الرياض · دفع عند الاستلام</span>
+      <span class="item">أسعار تبدأ من 1500 ر.س — أكّد المقاس والموديل قبل الطلب</span>
+      <span class="item"><a href="https://wa.me/966558660352?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20%D8%B7%D9%84%D8%A8%20%D8%B9%D8%B1%D8%B6" target="_blank" rel="noopener">اطلب عرض سعر الآن</a></span>
+    </div>
+  </div>
+
   <div class="topbar"><strong>ماي روم</strong> — غرف نوم · خزائن · مراتب — توصيل وتركيب — الدفع عند الاستلام</div>
 
   <header>
@@ -151,11 +173,11 @@
     <div class="hero-bg" role="img" aria-label="بنر ماي روم"></div>
     <div class="hero-inner">
       <div class="wrap">
-        <div class="badge">عروض الرياض · جودة موثّقة</div>
-        <h1>غرف نوم · خزائن · مراتب<br>بأسعار منافسة وتوصيل وتركيب</h1>
-        <p class="lead">ماي روم — تشكيلة غرف نوم وخزائن ومراتب تناسب الشقق والمنازل في الرياض، مع خدمة واضحة ودفع عند الاستلام.</p>
+        <div class="badge">ماي روم · الرياض</div>
+        <h1>غرف نوم · خزائن · مراتب</h1>
+        <p class="lead">تشكيلة تناسب الشقق والمنازل — توصيل وتركيب داخل الرياض ودفع عند الاستلام.</p>
         <div class="price-row">
-          <div><div style="opacity:.9;font-size:.9rem">تبدأ الأسعار من</div><div class="amount">999 <small>ر.س</small></div></div>
+          <div><div style="opacity:.9;font-size:.9rem">تبدأ الأسعار من</div><div class="amount">1500 <small>ر.س</small></div></div>
           <div style="opacity:.92;font-size:.95rem;max-width:16em">حسب المقاس والموديل — أكّد عبر واتساب قبل الطلب</div>
         </div>
         <div class="points">
@@ -210,7 +232,7 @@
           <div class="body">
             <span class="tag">مراتب</span>
             <h3>مراتب طبية وفندقية</h3>
-            <div class="price">من 999 <small>ر.س</small></div>
+            <div class="price">من 1500 <small>ر.س</small></div>
             <ul>
               <li>مفرد · نفر ونص · نفرين</li>
               <li>كثافات حسب احتياجك</li>
@@ -234,7 +256,7 @@
           </div>
         </article>
       </div>
-      <p class="note">يُفضّل تأكيد المقاس واللون قبل الطلب. التوصيل داخل الرياض ونواحيها حسب الاتفاق.</p>
+      
     </div>
   </section>
 
@@ -382,7 +404,7 @@
 <section id="blog-teaser" style="background:#fff;border-block:1px solid var(--line)">
     <div class="wrap" style="text-align:center">
       <h2>نصائح قبل الشراء</h2>
-      <p class="sub">مقالات قصيرة عن غرف النوم والخزائن والمراتب — من القائمة الجانبية (☰) أو الزر أدناه</p>
+      <p class="sub">مقالات عن غرف النوم والخزائن والمراتب</p>
       <a class="btn btn-call" href="blog/">فتح المدونة</a>
     </div>
   </section>
@@ -393,7 +415,7 @@
       <p style="margin-top:6px">غرف نوم · خزائن · مراتب — الرياض</p>
       <p style="margin-top:6px">شركة الغرفة الفاخرة للأثاث — 7025932372</p>
       <p style="margin-top:8px"><a href="https://wa.me/966558660352" target="_blank" rel="noopener">واتساب 0558660352</a> · <a href="tel:0558660352">اتصال</a></p>
-      <p style="margin-top:10px;font-size:.8rem"><a href="blog/">المدونة</a></p>
+      
     </div>
   </footer>
 
@@ -404,6 +426,40 @@
 
   <script>
     if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(function(){})}
+
+      (function(){
+        var d=new Date();
+        var day=d.getDay(); // 0 Sun ... 5 Fri
+        var y=d.getFullYear();
+        var national=new Date(y,8,23); // Sep 23
+        if(d>national) national=new Date(y+1,8,23);
+        var daysTo=Math.ceil((national-d)/(1000*60*60*24));
+        var main='', accent='';
+        if(daysTo>=0 && daysTo<=20){
+          main='عرض اليوم الوطني — خصم مميز على غرف النوم والخزائن والمراتب حتى 23 سبتمبر';
+          accent='احتفل مع ماي روم بعرض اليوم الوطني · واتساب الآن';
+        } else if(day===5 || day===4){
+          main='عرض الجمعة — خصم إضافي على الطلبات الجديدة عبر واتساب';
+          accent='جمعتك أوفر مع ماي روم · غرف نوم · خزائن · مراتب';
+        } else {
+          var daily=[
+            'عرض اليوم للعملاء الجدد — استشر مجاناً عبر واتساب قبل الشراء',
+            'عرض اليوم: معاينة في المعرض + عرض سعر فوري على غرف النوم',
+            'عرض اليوم: خصم على الخزائن التفصيل عند الطلب هذا الأسبوع',
+            'عرض اليوم: مراتب بأسعار منافسة مع توصيل داخل الرياض',
+            'عرض اليوم للعملاء الجدد — تأكيد المقاس والموديل قبل الدفع'
+          ];
+          main=daily[day%daily.length];
+          accent='ماي روم — عروض مستمرة طوال الأسبوع للعملاء الجدد';
+        }
+        var els=document.querySelectorAll('#promoText1, #promoText1b');
+        els.forEach(function(el){ if(el) el.textContent=main; });
+        // update second rotating line if present
+        var items=document.querySelectorAll('#promoTrack .item');
+        if(items.length>=2) items[1].textContent=accent;
+        if(items.length>=6) items[5].textContent=accent;
+      })();
+
     (function(){
       var bg=document.getElementById('drawerBg'), dr=document.getElementById('drawer');
       function openD(){bg.classList.add('open');dr.classList.add('open');}
