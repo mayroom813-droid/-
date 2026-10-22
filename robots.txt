@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://www.myroom-sa.com/sitemap.xml
+Sitemap: https://ten-orpin-58.vercel.app/sitemap.xml
