@@ -152,6 +152,20 @@
     .form-actions .btn{flex:1;min-width:140px}
     .branch-one{max-width:420px}
     @media(max-width:640px){.nav{display:none}.hero{min-height:380px}.card img{height:180px}}
+
+    /* عرض الصورة كاملة عند الضغط */
+    .card > img,.gallery a img{cursor:zoom-in}
+    .image-lightbox{position:fixed;inset:0;z-index:9999;background:rgba(2,6,23,.94);display:none;align-items:center;justify-content:center;padding:18px}
+    .image-lightbox.open{display:flex}
+    .image-lightbox img{max-width:96vw;max-height:88vh;width:auto;height:auto;object-fit:contain;border-radius:10px;box-shadow:0 18px 60px rgba(0,0,0,.45)}
+    .image-lightbox .lightbox-close{position:absolute;top:14px;left:16px;width:46px;height:46px;border:0;border-radius:50%;background:#fff;color:#0f172a;font-size:30px;line-height:1;cursor:pointer}
+    .image-lightbox .lightbox-caption{position:absolute;bottom:12px;left:12px;right:12px;color:#fff;text-align:center;font-size:.95rem}
+    .videos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:18px;margin-top:20px}
+    .video-card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--sh)}
+    .video-card video{display:block;width:100%;aspect-ratio:9/16;max-height:520px;background:#0f172a;object-fit:contain}
+    .video-card .video-title{padding:12px 14px;font-weight:800}
+    .video-note{font-size:.92rem;color:var(--muted);margin-top:10px}
+
   </style>
 </head>
 <body>
@@ -430,7 +444,21 @@
     </div>
   </section>
 
-  <section id="gallery" style="background:#fff;border-block:1px solid var(--line)">
+  
+    <section id="videos">
+      <div class="wrap" style="padding:34px 0">
+        <h2>فيديوهات من ماي روم</h2>
+        <p class="sub">شاهد المنتجات والتفاصيل بالفيديو</p>
+        <div class="videos-grid">
+          <article class="video-card"><video controls playsinline preload="metadata"><source src="videos/VID-20261022-WA0002.mp4" type="video/mp4">متصفحك لا يدعم تشغيل الفيديو.</video><div class="video-title">فيديو من المعرض</div></article>
+          <article class="video-card"><video controls playsinline preload="metadata"><source src="videos/VID-20261022-WA0004.mp4" type="video/mp4">متصفحك لا يدعم تشغيل الفيديو.</video><div class="video-title">تفاصيل المنتجات</div></article>
+          <article class="video-card"><video controls playsinline preload="metadata"><source src="videos/VID-20261022-WA0005.mp4" type="video/mp4">متصفحك لا يدعم تشغيل الفيديو.</video><div class="video-title">جولة داخل التشكيلة</div></article>
+          <article class="video-card"><video controls playsinline preload="metadata"><source src="videos/VID-20261022-WA0006.mp4" type="video/mp4">متصفحك لا يدعم تشغيل الفيديو.</video><div class="video-title">عرض ماي روم</div></article>
+        </div>
+        <p class="video-note">لإضافة فيديو جديد: ارفع ملف MP4 إلى مجلد <strong>videos</strong> ثم انسخ اسمه داخل وسم source في هذه الصفحة، مع إبقاء مسار المجلد كما هو.</p>
+      </div>
+    </section>
+<section id="gallery" style="background:#fff;border-block:1px solid var(--line)">
     <div class="wrap">
       <h2>معرض الصور</h2>
       <p class="sub">من تشكيلتنا — غرف نوم وخزائن ومساحات تخزين</p>
@@ -717,6 +745,36 @@
         });
       }
     });
+
+    // فتح الصور بالحجم الكامل دون قص، وإغلاق العارض بالنقر خارج الصورة أو Escape
+    document.addEventListener('DOMContentLoaded', function(){
+      var box=document.getElementById('imageLightbox');
+      if(!box) return;
+      var big=box.querySelector('img'), cap=box.querySelector('.lightbox-caption');
+      function showImage(src,alt){
+        big.src=src; big.alt=alt||'صورة من ماي روم'; cap.textContent=alt||'';
+        box.classList.add('open'); document.body.style.overflow='hidden';
+      }
+      function hideImage(){
+        box.classList.remove('open'); big.src=''; document.body.style.overflow='';
+      }
+      document.querySelectorAll('.card > img,.gallery a img').forEach(function(img){
+        img.addEventListener('click',function(e){
+          e.preventDefault(); e.stopPropagation();
+          showImage(img.currentSrc||img.src,img.alt);
+        });
+      });
+      box.querySelector('.lightbox-close').addEventListener('click',hideImage);
+      box.addEventListener('click',function(e){if(e.target===box) hideImage();});
+      document.addEventListener('keydown',function(e){if(e.key==='Escape') hideImage();});
+    });
+
   </script>
+
+  <div class="image-lightbox" id="imageLightbox" role="dialog" aria-modal="true" aria-label="عرض الصورة بالحجم الكامل">
+    <button class="lightbox-close" type="button" aria-label="إغلاق الصورة">&times;</button>
+    <img src="" alt="">
+    <div class="lightbox-caption"></div>
+  </div>
 </body>
 </html>
